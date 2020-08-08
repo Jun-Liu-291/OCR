@@ -16,3 +16,10 @@ Text detection detects the location and extent of the text and its layout. It al
  
 Text recognition is based on text detection, which recognizes text content and converts text information in the image into text information. The main problem solved by text recognition is what each text is. The recognized text usually needs to be checked again to ensure its correctness.
 
+## Background:
+This section provides technical background information related to suggested topics and definition of important terminologies used throughout this report:
+
+### Preprocessing
+ In this part, the most important things are RGB image and connected components.
+ #### RGB image
+ The original image is an RGB image. The RGB image can also be called as a true color image. A true color image is an image in which each pixel is specified by three values one each for the red, blue, and green components of the pixel scalar. M-by-n-by-3 array of class unit8, unit16, single, or double whose pixel value specify intensity values [7].
