@@ -8,7 +8,7 @@ According to the identification scenario, the OCR can be roughly divided into a 
  
 The typical OCR is shown as follows:
  
-Input  Image Preprocessing  Text Detection  Text Recognition  Output
+Input --> Image Preprocessing --> Text Detection --> Text Recognition --> Output
  
 Usually, in traditional OCR technology, image preprocessing is used to correct optical imaging problems of images. Common pre-processing processes include geometric transformation (perspective, distortion, rotation, etc.), distortion correction, blur removal, image enhancement, and flat-field correction.
  
