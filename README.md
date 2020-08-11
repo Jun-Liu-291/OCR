@@ -29,3 +29,14 @@ This section provides technical background information related to suggested topi
 ## 2.2 Text Recognition:
 I mainly used two methods to attempt achieve my goals. 
  ### 2.2.1 Convolutional Neural Network:
+  A 5-layer convolutional neural network has been considered at first. Referring to the TensorFlow, I tried to implement a similar structure as the MNIST model has. The model contains 5 layers:
+  1.	Layer 1: a convolutional layer computes 32 features using a 5x5 filter with ReLU activation, so that 26 kernels in total. Total parameters in layer = 5*5*32 + 32(Bias terms). Input image of size 32x32x1 gives an output of 28x28x1. (Padding is used to preserve width and height as the input images from MNIST or EMNIST are the size of 28x28).
+2.	Layer 2: a max pooling layer with a 2x2 filter and stride of 2. The input from previous layer of size 28x28x32 gets sub-sampled to 14x14x28. Total parameters in layer = 2*32.
+3.	Layer 3: a convolutional layer. It is similar to layer 1 and it is used to compute 64 features by using a 5x5 filters. So that, total parameters in layer = 5x5x64+64. ReLU activation has also been used. The output size would be 14x14x64 (padding is added).
+4.	Layer 4: a max pooling layer as same as the layer 2. It has a 2x2 filter and stride of 2. Total parameters in layer = 2*64. The image gets sub-sampled again to 7x7x64.
+5.	Layer 5: a dense layer with 1024 neurons. The output would be a vector with a shape of 1x1024. Total parameters in layer = 7x7x64x1024.
+6.	Then we used a dropout operation to drop elements, a logits operation to obtain probabilities for each class. Then applying argmax function to obtain the final prediction.
+The total number of parameters that used in this model is 3213952.
+
+A simple model has been used by Ram et al. This model provides good results used to recognize printed characters:
+ ### Ram's Model:
