@@ -59,3 +59,17 @@ Where r is the learning rate [1].
 If the initial value w0 is chosen properly and the learning rate (gain) is chosen small enough, this algorithm can satisfy the linear convergence, that is, − log ρ ∼ t, where ρ represents the residual error.
 Then disadvantages of this method can be observed: when the number of samples m is large, all samples need to be calculated for each iteration, and the training process will be slow. Due to the large number of samples, a simplified method, SGD with faster training process, had been used to train Ram’s model.
 #### 2.2.2.2 Stochastic Gradient Descent (SGD):
+SGD is an important simplification. In each iteration, the gradient estimation does not calculate En(fw) directly but based on a sample of zt that is randomly selected.
+
+█(w_(t+1)=w_t-r_t ∇_w Q(z_i,w_t ),#(2.3) )
+
+The stochastic process {wt: t= 1, …} depends on the examples randomly picked at each iteration. 
+Since the loss function is not optimized on all training data, but in each iteration, the loss function is optimized by a randomly selected training data. So that the update speed of each round of parameters is greatly accelerated but problems occur.  The model accuracy would be decreased, and the model may converge to a local optimum because a single sample cannot represent the trend of the entire sample [1].
+
+# 3. Methodology
+This section provides a description of Python experiments designed to investigate the feasibility of CNN based and shallow neural network based optical character recognition. It explains dataset used for training, preprocessing procedure for input image standardization and detailed experiment configuration.
+
+## 3.1 Datasets:
+The CNN and shallow neural network both were trained on MNIST dataset and EMNIST dataset. 
+### 3.1.1 MNIST dataset:
+MNIST dataset is a large dataset of handwritten digits that is commonly used for training various image processing systems and it is modified by National Institute of Standards and Technology. This dataset contains digits from 0 to 9, meaning 10 patterns in total and it consists of pair, ‘image’ and its corresponding ‘label’. Each image is a gray scaled image with size 28 x 28 pixels [2]. 
