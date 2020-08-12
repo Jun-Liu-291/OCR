@@ -40,3 +40,22 @@ The total number of parameters that used in this model is 3213952.
 
 A simple model has been used by Ram et al. This model provides good results used to recognize printed characters:
  ### Ram's Model:
+  Their model will reshape an input image to a 32 x 32 pixels image. This image would be reshaped again to a vector with dimensions 1 x 1024. After this simple preprocess, an input image now has been converted to an input vector. Then, they built a very big matrix (weights) with dimensions 1024 x 62 and a bias with dimensions 1 x 62. Now, their idea is very clear:
+
+Input Vector(1,1024) × Weights(1024,62)+Bias(1,62)=Classes(1,62)
+
+The output is a vector of 62 classes. Each element in the output vector represents a probability of the corresponding class.  The total number of parameters is 65598.
+Training model:
+Ram’s model has been trained on MNIST dataset as well. Training process was based on gradient descent.
+#### Gradient Descent (GD):
+The network’s weights and biases will be updated by applying gradient descent.
+We often use gradient descent (GD) to minimize costs. For each iteration, we update the weight W based on En(fw):
+█(E_n (f)=1/n ∑_(i=1)^n▒〖l(f(x_i ),y_i ),〗#(2.1) )
+This equation is a cost function.
+Then the updated weight W would be:
+█(w_(t+1)=w_t-r 1/n ∑_(i=1)^n▒∇_w  Q(z_i,w_t ),#(2.2) )
+
+Where r is the learning rate [1]. 
+If the initial value w0 is chosen properly and the learning rate (gain) is chosen small enough, this algorithm can satisfy the linear convergence, that is, − log ρ ∼ t, where ρ represents the residual error.
+Then disadvantages of this method can be observed: when the number of samples m is large, all samples need to be calculated for each iteration, and the training process will be slow. Due to the large number of samples, a simplified method, SGD with faster training process, had been used to train Ram’s model.
+
