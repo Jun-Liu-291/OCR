@@ -73,3 +73,8 @@ This section provides a description of Python experiments designed to investigat
 The CNN and shallow neural network both were trained on MNIST dataset and EMNIST dataset. 
 ### 3.1.1 MNIST dataset:
 MNIST dataset is a large dataset of handwritten digits that is commonly used for training various image processing systems and it is modified by National Institute of Standards and Technology. This dataset contains digits from 0 to 9, meaning 10 patterns in total and it consists of pair, ‘image’ and its corresponding ‘label’. Each image is a gray scaled image with size 28 x 28 pixels [2]. 
+### 3.1.2 EMNIST dataset:
+EMNIST is an expanded MNIST. The dataset has six different splits, each split consists of different numbers of classes and different numbers of characters. In this project, the EMNIST ByClass, containing 62 classes, and the EMNIST Letters, containing 26 classes, had been used for training process. The EMNIST dataset has a same format as MNIST does. It also consists of pair, ‘image’ and its ‘label’. Each image is a grey scaled image with size 28 x 28 pixels as well. In our project, training part, I used EMNIST Letters dataset to train our model for 5101 times and validate the model in the same dataset. The other split of EMNIST dataset had been used by Ram. They did not use all of the EMNIST but used some of that whose training set containing 50,000 2-tuples data with 62 classes and testing set & validation set containing 10,000 2-tuples data with 62 classes [3]. 
+
+## 3.2 Preporcessing:
+Before we start our recognition part, we need to get the images of a single character.
