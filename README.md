@@ -78,3 +78,9 @@ EMNIST is an expanded MNIST. The dataset has six different splits, each split co
 
 ## 3.2 Preporcessing:
 Before we start our recognition part, we need to get the images of a single character.
+### 3.2.1 Grayscale image
+The original images are RGB model images taken by camera in our project. To recognize the text in the images, the first thing we need to do is convert the original images to binary images, which can reduce the amount of calculation. But before convert it to binary images, we need to convert it to 8-bit grayscale images. If the number of the pixels in original image is n×m,   RGB image is an 8-bit n-by-m-by-3 data array stored in computer, while an 8-bit n-by-m data array. And a widely used equation to convert RGB image to grayscale image is,
+█(gray=0.2989×R+0.5870×G+0.1141×B,#(2.4) )
+which is also applied to our project.
+### 3.2.2 Binarization
+After we get the 8-bit grayscale image, we can convert it to a binary image. In our project, our aim is to recognize characters in the images, and in this case, for most of our original images, the background is close to white, which has the value close to 255 in the array, and the characters is close to black, which has the value close to zero. But in binary images, array only have 0 and 1, while 0 represents white and 1 represents black. As a consequence, we need to set a threshold to segment the grayscale image, let the pixels belong to characters equal to 1, and all the other background pixels equal to 0. After we get the histogram of many grayscale images, we set the value of the threshold as the end of the first wave’s value.
