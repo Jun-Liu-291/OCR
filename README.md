@@ -104,3 +104,10 @@ After the training process, a validation part could be followed. Setting my own 
 The initial setup was that an image, after preprocessing, will be a series of images that each image, in the series, contains individual character. Then we feed these images to the text recognition model so that we will obtain text outputs.
 ### 3.3.2 Ram's Model
 Suggested by Ram, Das and Shamdasani, a simple model which is trained in dataset with 60k training times has been tested. This is a pretrained model. Hence, weights and biases have been set and trained properly. After loading weights and changing input variables, we set outputs of the preprocess as the input of this pretrained model, that is, we used this model to do the last step, character recognition, and tried to obtain text outputs.
+
+# 4 Results and Discussion
+
+## 4.1 Preprocessing:
+The original image is showed at Figure 4.1.2.1(a)
+### 4.1.1 Grayscale image:
+The grayscale image is showed at Figure 4.1.2.1(b). As we can see, in this image, because our image is taken from the screen, the ripples of the screen is clearly showed in the image. It might not have a huge influence on the quality of the image. But after we get the binary image, it might cause the some pixels of characters change to 0.
