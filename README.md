@@ -98,4 +98,9 @@ We start to search the first line of our array, we will label the first pixel wh
 ## 3.3 Text Recoginition:
 Following the segmentation part, we want to recognize each character in segmented figure.
 In this part, we initially suggested that two methods might be doable:
-
+### 3.3.1 Convolutional Neural Network:
+Referred to TensorFlow MNIST model, a 5-layer-CNN model trained on EMNIST dataset has been constructed. The structure of the CNN is shown in the background part. This model has been trained in the EMNIST Letters training dataset for 5101 times and it has been tested in the same dataset to see an accuracy.
+After the training process, a validation part could be followed. Setting my own dataset as an input, or using some preprocessed image as an input, then I run the model and tried to obtain some reasonable results from the outputs. 
+The initial setup was that an image, after preprocessing, will be a series of images that each image, in the series, contains individual character. Then we feed these images to the text recognition model so that we will obtain text outputs.
+### 3.3.2 Ram's Model
+Suggested by Ram, Das and Shamdasani, a simple model which is trained in dataset with 60k training times has been tested. This is a pretrained model. Hence, weights and biases have been set and trained properly. After loading weights and changing input variables, we set outputs of the preprocess as the input of this pretrained model, that is, we used this model to do the last step, character recognition, and tried to obtain text outputs.
