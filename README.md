@@ -111,3 +111,8 @@ Suggested by Ram, Das and Shamdasani, a simple model which is trained in dataset
 The original image is showed at Figure 4.1.2.1(a)
 ### 4.1.1 Grayscale image:
 The grayscale image is showed at Figure 4.1.2.1(b). As we can see, in this image, because our image is taken from the screen, the ripples of the screen is clearly showed in the image. It might not have a huge influence on the quality of the image. But after we get the binary image, it might cause the some pixels of characters change to 0.
+### 4.1.2 Binary image:
+We plan to get the adaptive threshold. So we calculate the histogram of the grayscale image, and it showed at Figure 4.1.3.1(a). As we can see, in the histogram, there are two waves inside. We find the position of these two waves, and we set the threshold as the median value of these two peaks. And the binary image is showed as Figure 4.1.3.1(b) 
+
+### 4.1.3 Denoising:
+In this part, we use a 3-by-3 median filter to denoise the image. The results show this filter successfully get rid of the noise in the image. The results is showed in Figure 4.1.4.1.
