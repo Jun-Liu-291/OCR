@@ -116,3 +116,10 @@ We plan to get the adaptive threshold. So we calculate the histogram of the gray
 
 ### 4.1.3 Denoising:
 In this part, we use a 3-by-3 median filter to denoise the image. The results show this filter successfully get rid of the noise in the image. The results is showed in Figure 4.1.4.1.
+
+### 4.1.4 Rotate:
+Since after we rotate the original image, the part of the corner will be fulfilled with pixels equal to one, but what we want should be zero. So I convert it to a RGBA image and composite it with two white colored new images with the same size to avoid the corner turned to be black. And after conducting the rotation, I change it back to binary image. And after we successfully rotate the image, we find that if we let the background to be black and the characters to be white will be more convenient for us. The final results is showed in Figure 4.1.5.1.
+
+### 4.1.5 Line segmentation
+The results is showed in the Figure 4.1.6.1. As we can see, the image of lines is not strictly straightforward. It might because the of the distortion caused by the camera.
+
